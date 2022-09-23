@@ -1,0 +1,5 @@
+,ID,Gender,Ever_Married,Age,Graduated,Profession,Work_Experience,Spending_Score,Family_Size,Var_1
+0,458989,Female,Yes,36,Yes,Engineer,0,Low,1,Cat_6
+1,458994,Male,Yes,37,Yes,Healthcare,8,Average,4,Cat_6
+2,458996,Female,Yes,69,No,,0,Low,1,Cat_6
+3,459000,Male,Yes,59,No,Executive,11,High,2,Cat_6
