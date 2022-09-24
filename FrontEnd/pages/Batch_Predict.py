@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import time
+import os
 
 st.markdown("## Batch Customer Prediction")
 st.sidebar.markdown("## Batch Predict")
@@ -11,7 +12,8 @@ if customer_data is not None:
     customer_data_df = pd.read_csv(customer_data)
     file_container = st.expander("View Uploaded Data")
     file_container.write(customer_data_df)
-    customer_data_df.to_csv('Data/uploadedfile.csv')
+    data_folder_dir = os.path.normpath(__file__).rsplit(os.sep, maxsplit=3)[0]
+    customer_data_df.to_csv(os.path.join(data_folder_dir,'Data/uploadedfile.csv'))
     #predict = st.button('Predict')
 
 else:

@@ -21,7 +21,7 @@ from fastapi import FastAPI, File, UploadFile
 # Initialize model artifacte files. This will be loaded at the start of FastAPI model server.
 # We will only need the list of features for the deployment tasks. Pipeline Preprocessing 
 # Steps are all saved in the trained_pipeline.pkl file
-trained_pipeline_path = r'.\mlruns\1\fb4c96c610f345329fc341b7186e31c2\artifacts\trained_pipeline\Trained_Pipeline.pkl'
+trained_pipeline_path = r'.\model\Trained_Pipeline.pkl'
 loaded_pipeline = joblib.load(trained_pipeline_path)
 #loaded_pipeline.get_params()['scaler'].min_  # Check one of the steps e.g. scaler
 # Get list of Model Features
@@ -119,17 +119,17 @@ def batch_predict():
     and makes predictions on the data. It returns a json object to the client.
     
     '''
-    deployment_data = pd.read_csv(r'Data/uploadedfile.csv',index_col='ID') # Keeping track of the Customer ID's
-
-    # Validate data types in dataframe
-    val = deployment_data.to_dict(orient="records")
-    DataFrameValidator(df_dict = val)
+    deployment_data = pd.read_csv(r'./Data/uploadedfile.csv',index_col='ID') # Keeping track of the Customer ID's
 
     #deployment_data = pd.DataFrame.from_dict(deployment_data,orient='index')
     deployment_data = deployment_data[FEATURES]
     # Deal with missing values in test data
     deployment_data.dropna(inplace=True)
     
+    # Validate data types in dataframe
+    val = deployment_data.to_dict(orient="records")
+    DataFrameValidator(df_dict = val)
+
     # Create prediction
     predicted_segmentations = loaded_pipeline.predict(deployment_data)
     deployment_data['Segmentation Prediction'] = predicted_segmentations
