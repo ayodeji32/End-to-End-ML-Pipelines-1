@@ -35,6 +35,6 @@ def run():
         st.success(f"Customer Segment Prediction:  {response.text}")
 
 
-if __name__ == '__main__':
-    #by default it will run at 8501 port
-    run()
+# if __name__ == '__main__':
+#     #by default it will run at 8501 port
+#     run()
