@@ -13,9 +13,14 @@ import pandas as pd
 from pydantic import BaseModel
 from typing import List
 import json
+import os.path
+from subprocess import call
 
 # FastAPI libray
 from fastapi import FastAPI, File, UploadFile
+
+d = os.path.dirname(os.path.realpath(__file__))  # main folder
+call(["python3", f"{d}/FrontEnd/Single_Predict.py"])
 
 #%%
 # Initialize model artifacte files. This will be loaded at the start of FastAPI model server.
@@ -153,5 +158,5 @@ def single_predict(data:DictValidator):
 
 
 
-#if __name__ == '__main__':
-    #uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True) 
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True) 
