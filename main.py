@@ -26,7 +26,7 @@ call(["python3", f"{d}/FrontEnd/Single_Predict.py"])
 # Initialize model artifacte files. This will be loaded at the start of FastAPI model server.
 # We will only need the list of features for the deployment tasks. Pipeline Preprocessing 
 # Steps are all saved in the trained_pipeline.pkl file
-trained_pipeline_path = r'.\model\Trained_Pipeline.pkl'
+trained_pipeline_path = f'{d}/model/Trained_Pipeline.pkl'
 loaded_pipeline = joblib.load(trained_pipeline_path)
 #loaded_pipeline.get_params()['scaler'].min_  # Check one of the steps e.g. scaler
 # Get list of Model Features
