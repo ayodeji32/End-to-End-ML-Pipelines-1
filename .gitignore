@@ -4,7 +4,9 @@ __pycache__/
 *$py.class
 
 custseg
-mlruns
+backend/mlruns
+test
+Procfile
 python==3.10
 
 .python

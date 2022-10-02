@@ -22,7 +22,7 @@ def run():
     Var_1 = st.selectbox('Variable', ['Cat_1', 'Cat_2', 'Cat_3','Cat_4', 'Cat_5', 'Cat_6', 'Cat_7'])
 
     if st.button('Predict'):
-        deployment_data = [{'Gender':Gender,
+        deployment_data = {'Gender':Gender,
                             'Ever_Married':Ever_Married,
                             'Age':Age,
                             'Graduated':Graduated,
@@ -30,8 +30,9 @@ def run():
                             'Work_Experience':Work_Experience,
                             'Spending_Score':Spending_Score,
                             'Family_Size':Family_Size,
-                            'Var_1':Var_1}]
-        response = requests.post('http://127.0.0.1:8000/single_predict', json=deployment_data)
+                            'Var_1':Var_1}
+        # Replace fastapp_cont with 127.0.0.1 if running the app local and not in docker
+        response = requests.post('http://fastapp_cont:8000/single_predict', json=deployment_data)
         st.success(f"Customer Segment Prediction:  {response.text}")
 
 
