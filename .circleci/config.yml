@@ -1,0 +1,8 @@
+version: 2.1 # CircleCI version
+jobs:
+  build:
+    machine: true # Use a Linux VM instead of docker environment
+    working_directory: ~/End-to-End-ML-Pipelines-1
+    steps:
+        - checkout
+        - run: docker-compose up -d

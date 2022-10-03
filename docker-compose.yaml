@@ -3,7 +3,7 @@ services:
   backend:
     container_name: fastapp_cont
     build: ./backend/
-    command: "python fastapp.py"
+    #command: "python fastapp.py"
     ports:
       - "8000:8000"
     networks: #user defined network bridge for all containers
@@ -12,7 +12,7 @@ services:
   frontend:
     container_name: streamlit_cont
     build: ./FrontEnd/
-    command: "python -m streamlit run Single_Predict.py --server.port 8080"
+    #command: "python -m streamlit run Single_Predict.py --server.port 8080"
     ports:
       - "8080:8080"
     networks:
