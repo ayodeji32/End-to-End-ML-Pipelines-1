@@ -6,3 +6,7 @@ jobs:
     steps:
         - checkout
         - run: docker-compose up -d
+workflow:
+  build_and_push:
+    jobs:
+      - build
