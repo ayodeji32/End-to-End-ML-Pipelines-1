@@ -9,8 +9,8 @@ jobs:
               docker-compose up -d 
               sudo curl https://cli-assets.heroku.com/install.sh | sh
               HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a frontend backend --recursive
-              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release frontend backend
+              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a fastapp_cont streamlit_cont --recursive
+              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release fastapp_cont streamlit_cont
 workflow:
   build_and_push:
     jobs:
