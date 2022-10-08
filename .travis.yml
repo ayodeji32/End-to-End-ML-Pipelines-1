@@ -10,8 +10,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t ayodeji32/segmentation-frontend -f ./FrontEnd/Dockerfile
-  - docker build -t ayodeji32/segmentation-backend -f ./backend/Dockerfile
+  - docker build -t segmentation-frontend -f ./FrontEnd/Dockerfile
+  - docker build -t segmentation-backend -f ./backend/Dockerfile
   
   # Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
