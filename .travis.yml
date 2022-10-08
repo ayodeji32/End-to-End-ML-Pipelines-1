@@ -1,9 +1,19 @@
 language: python
 
+sudo: required
+
+branches:
+  ony:
+    - master
+
 services:
   - docker
 
 before_install:
-  - docker build -t ayodeji32/customer_segmentation .  #End-to-End-ML-Pipelines-1
+  - docker build -t ayodeji32/segmentation-frontend -f ./FrontEnd/Dockerfile
+  - docker build -t ayodeji32/segmentation-backend -f ./backend/Dockerfile
+  
+  # Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ayodeji32/End-to-End-ML-Pipelines-1
+  - docker push ayodeji32/End-to-End-ML-Pipelines-1:segmentation-frontend
+  - docker push ayodeji32/End-to-End-ML-Pipelines-1:segmentation-backend
