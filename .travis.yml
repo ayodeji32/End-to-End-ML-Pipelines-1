@@ -4,9 +4,6 @@ services:
   - docker
 
 before_install:
-  - docker build -t ayodeji32/customer_segmentation .
-
-after_success:
-  -echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
+  - docker build -t ayodeji32/customer_segmentation .  #End-to-End-ML-Pipelines-1
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ayodeji32/customer_segmentation
