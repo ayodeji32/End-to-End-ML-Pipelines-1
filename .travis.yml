@@ -10,10 +10,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t ayodeji32/End-to-End-ML-Pipelines-1:segmentation-frontend -f ./FrontEnd/Dockerfile
-  - docker build -t ayodeji32/End-to-End-ML-Pipelines-1:segmentation-backend -f ./backend/Dockerfile
+  - docker build -t ayodeji32/end-to-end-ml-pipelines-1:segmentation-frontend ./FrontEnd/
+  - docker build -t ayodeji32/end-to-end-ml-pipelines-1:segmentation-backend ./backend/
   
   # Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ayodeji32/End-to-End-ML-Pipelines-1:segmentation-frontend
-  - docker push ayodeji32/End-to-End-ML-Pipelines-1:segmentation-backend
+  - docker push ayodeji32/end-to-end-ml-pipelines-1:segmentation-frontend
+  - docker push ayodeji32/end-to-end-ml-pipelines-1:segmentation-backend
