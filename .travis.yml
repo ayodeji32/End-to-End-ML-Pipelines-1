@@ -16,7 +16,7 @@ before_install:
   
 install: pip --version
 
-after_success:
+after_install:
   # Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ayodeji32/segmentation-app:frontend
