@@ -1,0 +1,32 @@
+{
+   "AWSEBDockerrunVersion": 2,
+   "containerDefinitions": [ 
+      { 
+        "name": "backend",
+        "links": [
+            "frontend"
+        ],
+        "essential": true,
+        "image": "ayodeji32/segmentation_app",
+        "portMappings": [ 
+            { 
+               "containerPort": 8000,
+               "hostPort": 8000
+            }
+         ],
+         "memory": 500
+      },
+
+      { 
+        "name": "frontend",
+        "image": "ayodeji32/segmentation_app",
+        "portMappings": [ 
+            { 
+               "containerPort": 8080,
+               "hostPort": 8080
+            }
+         ],
+         "memory": 500
+      }
+   ] 
+}

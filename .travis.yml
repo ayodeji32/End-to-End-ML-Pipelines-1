@@ -10,12 +10,22 @@ services:
   - docker
 
 before_install:
-  - docker build -t ayodeji32/segmentation_app:frontend ./FrontEnd/
-  - docker build -t ayodeji32/segmentation_app:backend ./backend/
+  - docker build -t ayodeji32/segmentation-app:frontend ./FrontEnd/
+  - docker build -t ayodeji32/segmentation-app:backend ./backend/
   
   # Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ayodeji32/segmentation_app:frontend
-  - docker push ayodeji32/segmentation_app:backend
+  - docker push ayodeji32/segmentation-app:frontend
+  - docker push ayodeji32/segmentation-app:backend
 
-  # end-to-end-ml-pipelines-1
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: segmentation-app
+  env: Segmentationapp-env
+  bucket_name: elasticbeanstalk-us-east-1-944509782810
+  bucket_path: segmentation-app
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
