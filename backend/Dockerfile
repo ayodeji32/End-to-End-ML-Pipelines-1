@@ -1,5 +1,5 @@
 FROM python:3.10
-COPY requirements.txt ./app/
+COPY requirements.txt /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 COPY ./model_config/ ./model_config/
