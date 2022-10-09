@@ -19,7 +19,7 @@ before_install:
   - docker push ayodeji32/segmentation-app:frontend
   - docker push ayodeji32/segmentation-app:backend
 
-install: skip
+install: pip --version
 
 deploy:
   provider: elasticbeanstalk
