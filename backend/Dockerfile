@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bullseye
+FROM python:3.10
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
@@ -7,3 +7,4 @@ COPY ./fastapp.py .
 EXPOSE 8000
 CMD python fastapp.py
 #CMD heroku container:push backendheroku container:push backend
+#-slim-bullseye
