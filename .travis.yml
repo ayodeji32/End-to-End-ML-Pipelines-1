@@ -1,6 +1,6 @@
-language: python
+language: generic
 
-sudo: required
+#sudo: required
 
 services:
   - docker
