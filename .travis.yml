@@ -1,4 +1,5 @@
-language: generic
+language: python
+python: '3.10'
 
 #sudo: required
 
@@ -9,7 +10,7 @@ before_install:
   - docker build -t ayodeji32/segmentation-app:frontend ./FrontEnd/
   - docker build -t ayodeji32/segmentation-app:backend ./backend/
 
-install: pip --version
+install: pip install -r requirements.txt
   
 after_success:
   # Login to docker CLI
