@@ -6,7 +6,7 @@ import time
 
 def run():
 
-    st.set_page_config(page_title='Segmentation', layout = 'wide', page_icon = None, initial_sidebar_state = 'auto')
+    st.set_page_config(page_title='Segmentation', layout = 'wide', page_icon = "favicon.png", initial_sidebar_state = 'auto')
 
     st.markdown("## Single Customer Prediction")
     st.sidebar.markdown("## Single Predict")
