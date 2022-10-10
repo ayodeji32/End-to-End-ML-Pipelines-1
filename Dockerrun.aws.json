@@ -7,7 +7,7 @@
             "frontend"
         ],
         "essential": true,
-        "image": "ayodeji32/segmentation_app",
+        "image": "ayodeji32/segmentation-app",
         "portMappings": [ 
             { 
                "containerPort": 8000,
@@ -19,7 +19,7 @@
 
       { 
         "name": "frontend",
-        "image": "ayodeji32/segmentation_app",
+        "image": "ayodeji32/segmentation-app",
         "portMappings": [ 
             { 
                "containerPort": 8080,
