@@ -3,11 +3,10 @@
    "containerDefinitions": [ 
       { 
         "name": "backend",
-        "links": [
-            "frontend"
-        ],
+        "image": "ayodeji32/segmentation-app:backend",
+        "hostname": "backend",
+        "links": ["frontend"],
         "essential": true,
-        "image": "ayodeji32/segmentation-app",
         "portMappings": [ 
             { 
                "containerPort": 8000,
@@ -17,9 +16,10 @@
          "memory": 500
       },
 
-      { 
+      {
         "name": "frontend",
-        "image": "ayodeji32/segmentation-app",
+        "image": "ayodeji32/segmentation-app:frontend",
+        "hostname": "frontend",
         "portMappings": [ 
             { 
                "containerPort": 8080,
