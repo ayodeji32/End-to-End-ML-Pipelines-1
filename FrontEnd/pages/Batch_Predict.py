@@ -51,7 +51,7 @@ if st.button('Predict'):
     page_response = ''
     while page_response == '':
         try:  #    127.0.0.1
-            response = requests.post('http://fastapp_cont:8000/batch_predict', json=deployment_data)
+            response = requests.post('http://backend:8000/batch_predict', json=deployment_data)
             break
         except:
             time.sleep(1)

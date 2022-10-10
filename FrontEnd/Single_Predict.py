@@ -6,9 +6,10 @@ import time
 
 def run():
 
+    st.set_page_config(page_title='Segmentation', layout = 'wide', page_icon = None, initial_sidebar_state = 'auto')
+
     st.markdown("## Single Customer Prediction")
     st.sidebar.markdown("## Single Predict")
-
 
     Gender = st.selectbox('Gender', ['Male', 'Female'])        
     Ever_Married = st.selectbox('Ever Married?', ['No', 'Yes'])     
