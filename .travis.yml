@@ -21,7 +21,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-1
   app: segmentation-app
-  env: Segmentationapp-env-1
+  env: Segmentationapp-env
   bucket_name: elasticbeanstalk-us-east-1-944509782810
   bucket_path: segmentation-app
   on:
