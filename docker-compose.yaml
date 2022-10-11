@@ -1,7 +1,7 @@
 version: "3"
 services:
   backend:
-    container_name: fastapp_cont
+    container_name: backend
     build: ./backend/
     #command: "heroku container:push backend" # "python fastapp.py"
     ports:
@@ -10,7 +10,7 @@ services:
       - jcnet
 
   frontend:
-    container_name: streamlit_cont
+    container_name: frontend
     build: ./FrontEnd/
     #command: "heroku container:push frontend" #"python -m streamlit run Single_Predict.py --server.port 8080"
     ports:
