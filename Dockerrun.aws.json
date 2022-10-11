@@ -3,7 +3,7 @@
    "containerDefinitions": [ 
       { 
         "name": "backend",
-        "image": "ayodeji32/segmentation-app",
+        "image": "ayodeji32/segmentation-app:backend",
         "hostname": "backend",
         "links": ["frontend"],
         "essential": false,
@@ -18,7 +18,7 @@
 
       {
         "name": "frontend",
-        "image": "ayodeji32/segmentation-app",
+        "image": "ayodeji32/segmentation-app:frontend",
         "hostname": "frontend",
         "essential": true,
         "portMappings": [ 
