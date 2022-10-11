@@ -33,7 +33,7 @@ def run():
                             'Family_Size':Family_Size,
                             'Var_1':Var_1}
         # Replace fastapp_cont with 127.0.0.1 if running the app local and not in docker
-        response = requests.post('http://localhost:8000/single_predict', json=deployment_data)
+        response = requests.post('http://backend:8000/single_predict', json=deployment_data)
         st.success(f"Customer Segment Prediction:  {response.text}")
 
 
