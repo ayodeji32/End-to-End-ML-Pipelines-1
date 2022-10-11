@@ -2,23 +2,10 @@
    "AWSEBDockerrunVersion": "2",
    "containerDefinitions": [ 
       { 
-        "name": "backend",
-        "image": "ayodeji32/backend",
-        "links": ["frontend"],
-        "essential": false,
-        "portMappings": [ 
-            { 
-               "containerPort": 8000,
-               "hostPort": 8000
-            }
-         ],
-         "memory": 1000
-      },
-
-      {
         "name": "frontend",
         "image": "ayodeji32/frontend",
-        "essential": true,
+        "links": ["backend"],
+        "essential": false,
         "portMappings": [ 
             { 
                "containerPort": 80,
@@ -26,6 +13,19 @@
             }
          ],
          "memory": 500
+      },
+
+      {
+        "name": "backend",
+        "image": "ayodeji32/backend",
+        "essential": true,
+        "portMappings": [ 
+            { 
+               "containerPort": 8000,
+               "hostPort": 8000
+            }
+         ],
+         "memory": 900
       }
    ] 
 }
