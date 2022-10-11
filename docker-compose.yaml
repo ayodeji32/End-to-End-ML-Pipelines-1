@@ -14,7 +14,7 @@ services:
     build: ./FrontEnd/
     #command: "heroku container:push frontend" #"python -m streamlit run Single_Predict.py --server.port 8080"
     ports:
-      - "8501:8501"
+      - "80:80"
     networks:
       - jcnet
 networks:
