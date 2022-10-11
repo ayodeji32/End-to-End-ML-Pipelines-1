@@ -168,4 +168,5 @@ def single_predict(data:DictValidator):
 
 
 if __name__ == '__main__':
-    uvicorn.run("fastapp:app", host="0.0.0.0", port=8000, reload=True) 
+    uvicorn.run("fastapp:app", port=8000, reload=True)
+    #uvicorn.run("fastapp:app", host="0.0.0.0", port=8000, reload=True) 
