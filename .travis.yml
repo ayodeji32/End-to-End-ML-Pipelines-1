@@ -10,7 +10,6 @@ before_install:
   - docker build -t ayodeji32/frontend ./FrontEnd/
   - docker build -t ayodeji32/backend ./backend/
 
-#install: pip install -r requirements.txt
   
 after_success:
   # Login to docker CLI
@@ -21,10 +20,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
-  app: segmentation-app
-  env: Segmentationapp-env-1
+  app: segmentation-app3
+  env: Segmentationapp3-env
   bucket_name: elasticbeanstalk-us-east-1-944509782810
-  bucket_path: segmentation-app
+  bucket_path: segmentation-app3
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY

@@ -4,7 +4,6 @@
       { 
         "name": "backend",
         "image": "ayodeji32/backend",
-        "hostname": "backend",
         "links": ["frontend"],
         "essential": false,
         "portMappings": [ 
@@ -13,13 +12,12 @@
                "hostPort": 8000
             }
          ],
-         "memory": 500
+         "memory": 1024
       },
 
       {
         "name": "frontend",
         "image": "ayodeji32/frontend",
-        "hostname": "frontend",
         "essential": true,
         "portMappings": [ 
             { 
@@ -27,7 +25,7 @@
                "hostPort": 8501
             }
          ],
-         "memory": 500
+         "memory": 1024
       }
    ] 
 }
