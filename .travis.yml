@@ -7,16 +7,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t ayodeji32/segmentation-app:frontend ./FrontEnd/
-  - docker build -t ayodeji32/segmentation-app:backend ./backend/
+  - docker build -t ayodeji32/frontend ./FrontEnd/
+  - docker build -t ayodeji32/backend ./backend/
 
 #install: pip install -r requirements.txt
   
 after_success:
   # Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ayodeji32/segmentation-app:frontend
-  - docker push ayodeji32/segmentation-app:backend
+  - docker push ayodeji32/frontend
+  - docker push ayodeji32/backend
 
 deploy:
   provider: elasticbeanstalk
