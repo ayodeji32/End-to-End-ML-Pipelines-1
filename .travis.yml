@@ -20,10 +20,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
-  app: segmentation-app3
-  env: Segmentationapp3-env
+  app: segmentation-app4
+  env: Segmentationapp4-env
   bucket_name: elasticbeanstalk-us-east-1-944509782810
-  bucket_path: segmentation-app3
+  bucket_path: segmentation-app4
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY

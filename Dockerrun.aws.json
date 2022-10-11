@@ -12,7 +12,7 @@
                "hostPort": 8000
             }
          ],
-         "memory": 1024
+         "memory": 1000
       },
 
       {
@@ -25,7 +25,7 @@
                "hostPort": 80
             }
          ],
-         "memory": 1024
+         "memory": 500
       }
    ] 
 }
