@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     networks: #user defined network bridge for all containers
-      - jcnet
+      - jcnetwk
 
   frontend:
     container_name: frontend
@@ -16,6 +16,6 @@ services:
     ports:
       - "80:80"
     networks:
-      - jcnet
+      - jcnetwk
 networks:
-  jcnet:
+  jcnetwk:
