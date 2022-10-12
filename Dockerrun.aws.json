@@ -13,6 +13,11 @@
                "hostPort": 80
             }
          ],
+         "environment": [
+            {"name": "Container", 
+            "value": "backend"
+            }
+         ],
          "memory": 500
       },
 
