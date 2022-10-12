@@ -48,14 +48,14 @@ if st.button('Predict'):
     #deployment_data = pd.DataFrame.to_json(customer_data_df, orient='records')
     deployment_data = customer_data_df.to_dict('records')
     #deployment_data = json.loads(customer_data_df.to_json(orient='records'))
-    page_response = ''
-    while page_response == '':
-        try:  #    127.0.0.1
-            response = requests.post('http://backend:8000/batch_predict', json=deployment_data)
-            break
-        except:
-            time.sleep(1)
-            continue
+    # page_response = ''
+    # while page_response == '':
+    #     try:  #    127.0.0.1
+    response = requests.post('http://backend:8000/batch_predict', json=deployment_data)
+        #     break
+        # except:
+        #     time.sleep(1)
+        #     continue
     parsed_prediction_df = pd.DataFrame(response.json()) #pd.DataFrame.from_dict(response, orient='columns')
     #parsed_prediction_df = pd.json_normalize(response)
     file_container2 = st.expander("View Model Predictions")
