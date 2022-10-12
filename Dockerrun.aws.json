@@ -32,7 +32,7 @@
                "hostPort": 80
             }
          ],
-         "memory": 900
+         "memory": 500
       }
    ] 
 }
